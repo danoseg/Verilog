@@ -33,7 +33,7 @@ module add4_tb();
     add4 DUT(.A(a_tb), .B(b_tb), .Cin(Cin), .Sum(y_tb), .Cout(Co_tb));
     
     integer i,j,k;
-    //Test stimulus generation
+    //Test stimulus generation using for loop
     initial
         begin
             for(i=0;i<16;i=i+1)
@@ -57,17 +57,8 @@ module add4_tb();
                 $stop;
                 end
          end
-          /*assert_label:
-            assert(y_tb == a_tb + b_tb + Cin)
-                begin
-                    $display("Test passed");
-                end
-                
-                else
-                begin
-                    $error("error - sum is wrong");
-                    $stop;
-                end */
+
+    // Manual input stimulus
      /*   begin
         #0 a_tb=2; b_tb=2; Cin=0; expected=4;
         #10 a_tb=15; b_tb=0; Cin=1; expected=0;
