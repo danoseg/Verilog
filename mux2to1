@@ -1,0 +1,12 @@
+module mux2to1(
+    input wire clk, en, ld, sel,
+    input wire [2:0] a, b,
+    output reg [2:0] y
+);
+
+always @(posedge clk) begin
+    if (en && ld) 
+        y <= sel ? a : b;
+end
+
+endmodule
